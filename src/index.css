@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #C0392B;
+  --color-primary-hover: #A93226;
+  --color-secondary: #D98E04;
+  --color-bg: #FBF3E7;
+  --color-surface: #FFFDF8;
+  --color-text: #3A2318;
+  --color-muted: #7A6555;
+  --color-border: #E4D2B8;
+  --color-success: #4C7A4C;
+  --color-danger: #A5302A;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-card: 16px;
+  --radius-pill: 999px;
+}
+
+* { scrollbar-width: thin; scrollbar-color: #E4D2B8 transparent; }
+
+html, body { background: #FBF3E7; color: #3A2318; font-family: 'Inter', system-ui, sans-serif; }
+
+*:focus-visible {
+  outline: 2px solid #C0392B;
+  outline-offset: 2px;
+}
+
+/* steam animation */
+@keyframes steam-rise {
+  0% { transform: translateY(8px) scale(0.9); opacity: 0; }
+  30% { opacity: 0.6; }
+  100% { transform: translateY(-18px) scale(1.1); opacity: 0; }
+}
+@keyframes card-pop {
+  0% { transform: scale(0.98); }
+  50% { transform: scale(1.015); }
+  100% { transform: scale(1); }
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-pop { animation: card-pop 420ms cubic-bezier(0.34,1.56,0.64,1); }
+.animate-fade { animation: fade-in 280ms ease-out; }
